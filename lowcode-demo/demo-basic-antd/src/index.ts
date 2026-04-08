@@ -18,6 +18,7 @@ import PreviewSamplePlugin from './plugins/plugin-preview-sample';
 import CustomSetterSamplePlugin from './plugins/plugin-custom-setter-sample';
 import SetRefPropPlugin from '@alilc/lowcode-plugin-set-ref-prop';
 import LogoSamplePlugin from './plugins/plugin-logo-sample';
+import LowcodePluginPluginDemo from './plugins/plugin-demo';
 import './global.scss';
 
 async function registerPlugins() {
@@ -62,6 +63,10 @@ async function registerPlugins() {
 
   await plugins.register(LoadIncrementalAssetsWidgetPlugin);
 
+
+  await plugins.register(LowcodePluginPluginDemo)
+
+  
 
   // 插件参数声明 & 传递，参考：https://lowcode-engine.cn/site/docs/api/plugins#设置插件参数版本示例
   await plugins.register(DataSourcePanePlugin, {
