@@ -18,7 +18,7 @@ import PreviewSamplePlugin from './plugins/plugin-preview-sample';
 import CustomSetterSamplePlugin from './plugins/plugin-custom-setter-sample';
 import SetRefPropPlugin from '@alilc/lowcode-plugin-set-ref-prop';
 import LogoSamplePlugin from './plugins/plugin-logo-sample';
-import LowcodePluginPluginDemo from './plugins/plugin-demo';
+// import LowcodePluginPluginDemo from './plugins/plugin-demo';
 import './global.scss';
 
 async function registerPlugins() {
@@ -64,7 +64,7 @@ async function registerPlugins() {
   await plugins.register(LoadIncrementalAssetsWidgetPlugin);
 
 
-  await plugins.register(LowcodePluginPluginDemo)
+  // await plugins.register(LowcodePluginPluginDemo)
 
   
 
