@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap");
+
+:root {
+  color-scheme: light;
+  font-family: "IBM Plex Sans", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(196, 111, 67, 0.18), transparent 28%),
+    radial-gradient(circle at right 20%, rgba(15, 57, 109, 0.1), transparent 32%),
+    linear-gradient(180deg, #f5eee5 0%, #efe3d6 100%);
+  color: #201812;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(90deg, rgba(32, 24, 18, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(32, 24, 18, 0.04) 1px, transparent 1px),
+    linear-gradient(180deg, #f7efe8 0%, #ede1d3 100%);
+  background-size: 48px 48px, 48px 48px, 100% 100%;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.designer-page {
+  width: min(1440px, calc(100vw - 48px));
+  margin: 0 auto;
+  padding: 32px 0 56px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.9fr);
+  gap: 24px;
+  padding: 28px;
+  border: 1px solid rgba(32, 24, 18, 0.08);
+  border-radius: 32px;
+  background: rgba(249, 243, 237, 0.9);
+  box-shadow: 0 30px 70px rgba(79, 52, 35, 0.12);
+  backdrop-filter: blur(14px);
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-family: "Syne", sans-serif;
+  font-size: clamp(2.6rem, 3.4vw, 4.4rem);
+  line-height: 0.94;
+  letter-spacing: -0.06em;
+}
+
+.hero-description {
+  max-width: 62ch;
+  margin: 18px 0 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(32, 24, 18, 0.72);
+}
+
+.hero-actions {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(181, 71, 45, 0.92);
+}
+
+.meta-strip,
+.workspace-grid {
+  display: grid;
+  gap: 22px;
+  margin-top: 22px;
+}
+
+.meta-strip {
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.8fr);
+}
+
+.workspace-grid {
+  grid-template-columns: 320px minmax(340px, 1fr) minmax(360px, 1.08fr);
+}
+
+.panel {
+  padding: 24px;
+  border: 1px solid rgba(32, 24, 18, 0.08);
+  border-radius: 28px;
+  background: rgba(255, 251, 247, 0.82);
+  box-shadow: 0 20px 50px rgba(79, 52, 35, 0.08);
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-family: "Syne", sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: -0.04em;
+}
+
+.muted {
+  color: rgba(32, 24, 18, 0.62);
+}
+
+.mono {
+  font-family: "Courier New", monospace;
+}
+
+.meta-grid,
+.inspector-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.input-shell {
+  display: grid;
+  gap: 10px;
+}
+
+.input-shell span,
+.toggle-row span,
+.option-editor-header span {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.span-2 {
+  grid-column: 1 / -1;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.stat-panel .ant-statistic {
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(181, 71, 45, 0.06);
+}
+
+.stat-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.palette-grid {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.palette-card {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid rgba(32, 24, 18, 0.08);
+  border-radius: 20px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(255, 248, 243, 0.85));
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.palette-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 16px 28px rgba(32, 24, 18, 0.08);
+}
+
+.palette-chip {
+  width: fit-content;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 14%, white);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.field-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid rgba(32, 24, 18, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 253, 251, 0.94);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.field-row:hover,
+.field-row.is-selected {
+  transform: translateY(-1px);
+  border-color: rgba(181, 71, 45, 0.42);
+  box-shadow: 0 16px 24px rgba(79, 52, 35, 0.08);
+}
+
+.field-row-title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.field-row-actions,
+.toggle-row,
+.option-editor-header,
+.modal-actions,
+.workflow-list {
+  display: flex;
+  align-items: center;
+}
+
+.field-row-actions {
+  gap: 4px;
+}
+
+.toggle-row {
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(181, 71, 45, 0.05);
+}
+
+.option-editor {
+  display: grid;
+  gap: 14px;
+}
+
+.option-editor-header,
+.modal-actions {
+  justify-content: space-between;
+}
+
+.option-list {
+  display: grid;
+  gap: 10px;
+}
+
+.option-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
+.workflow-list {
+  gap: 14px;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+
+.workflow-list > div {
+  flex: 1;
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 20px;
+  background: rgba(181, 71, 45, 0.05);
+}
+
+.empty-shell {
+  margin-top: 18px;
+  padding: 22px;
+  border-radius: 20px;
+  background: rgba(181, 71, 45, 0.05);
+}
+
+.modal-head {
+  margin-bottom: 16px;
+}
+
+.modal-head h2 {
+  margin: 0 0 8px;
+  font-family: "Syne", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: -0.04em;
+}
+
+.code-area textarea {
+  font-family: "Courier New", monospace;
+}
+
+@media (max-width: 1180px) {
+  .meta-strip,
+  .workspace-grid,
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-list {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 720px) {
+  .designer-page {
+    width: min(100vw - 24px, 100%);
+    padding: 18px 0 30px;
+  }
+
+  .panel,
+  .hero {
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .stats-row,
+  .meta-grid,
+  .inspector-grid,
+  .option-row {
+    grid-template-columns: 1fr;
+  }
+}

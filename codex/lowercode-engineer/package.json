@@ -1,0 +1,15 @@
+{
+  "name": "lowercode-engineer",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.11.0",
+  "scripts": {
+    "dev:designer": "pnpm --filter @lowercode/designer dev",
+    "dev:renderer": "pnpm --filter @lowercode/renderer dev",
+    "build:all": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
